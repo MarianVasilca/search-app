@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.argyle.searchapp.R
 import com.argyle.searchapp.data.network.response.LinkItem
 import com.argyle.searchapp.databinding.ItemLinkBinding
+import com.argyle.searchapp.utilities.extension.toCapitalLetter
 import com.argyle.searchapp.utilities.loadImage
 
 class LinkItemAdapter : ListAdapter<LinkItem, LinkItemViewHolder>(
@@ -53,7 +54,7 @@ class LinkItemViewHolder(
     fun bind(item: LinkItem) {
         binding.ivHeader.loadImage(item.logoURL, R.drawable.ic_logo_placeholder)
         binding.tvName.text = item.name
-        binding.tvKind.text = item.kind?.name
+        binding.tvKind.text = item.kind?.name?.toCapitalLetter()
     }
 
     companion object {

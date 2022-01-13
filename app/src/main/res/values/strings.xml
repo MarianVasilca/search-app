@@ -4,7 +4,7 @@
     <!--Search Screen-->
     <string name="search_title">Search</string>
     <string name="search_empty_list">No results found. Try searching for a new term</string>
-    <string name="search_hint">Search (e.g. Amazon)</string>
+    <string name="search_hint">Search (e.g. Argyle)</string>
 
     <!--Errors-->
     <string name="error_results_text">Oops! Something went wrong while loading your data.
