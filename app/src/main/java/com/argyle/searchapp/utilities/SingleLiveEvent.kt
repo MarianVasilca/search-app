@@ -1,4 +1,4 @@
-package com.argyle.searchapp.util
+package com.argyle.searchapp.utilities
 
 import android.util.Log
 import androidx.annotation.MainThread

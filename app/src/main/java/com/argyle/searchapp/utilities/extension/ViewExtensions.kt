@@ -1,4 +1,4 @@
-package com.argyle.searchapp.util.extension
+package com.argyle.searchapp.utilities.extension
 
 import android.view.View
 

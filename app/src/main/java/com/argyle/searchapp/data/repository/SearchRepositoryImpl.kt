@@ -14,7 +14,7 @@ class SearchRepositoryImpl @Inject constructor(
         search: String
     ): List<LinkItem> {
         try {
-            return networkAPI.searchLinkItems(limit, search)
+            return networkAPI.searchLinkItems(limit, search).results
         } catch (e: Throwable) {
             throw SearchLinkItemsError("Unable to search link items for term $search", e)
         }

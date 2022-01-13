@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">Search App</string>
 
-    <!--Main Screen-->
+    <!--Search Screen-->
     <string name="search_title">Search</string>
+    <string name="search_empty_list">No results found. Try searching for a new term</string>
+
+    <!--Errors-->
+    <string name="error_results_text">Oops! Something went wrong while loading your data.
+        Try again soon</string>
 </resources>
