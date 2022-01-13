@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.StringRes
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.argyle.searchapp.R
@@ -44,11 +45,6 @@ class SearchFragment : Fragment() {
         setupSubscribers()
     }
 
-    override fun onResume() {
-        super.onResume()
-        viewModel.onQueryTextChanged("Amazon")
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         optionalBinding = null
@@ -64,6 +60,7 @@ class SearchFragment : Fragment() {
 
     private fun setupSubscribers() {
         subscribeToViewModelEvents()
+        subscribeToUiEvents()
     }
 
     private fun subscribeToViewModelEvents() {
@@ -83,6 +80,16 @@ class SearchFragment : Fragment() {
 
     private fun showMessage(@StringRes resID: Int) {
         Snackbar.make(requireView(), resID, Snackbar.LENGTH_LONG).show()
+    }
+
+    private fun subscribeToUiEvents() {
+        binding.svSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(text: String?): Boolean = false
+            override fun onQueryTextChange(text: String?): Boolean {
+                viewModel.onQueryTextChanged(text)
+                return true
+            }
+        })
     }
 
 }

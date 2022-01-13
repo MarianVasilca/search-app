@@ -32,14 +32,21 @@ class SearchViewModel @Inject constructor(
 
     val isLoading = MutableLiveData(false)
     val isError = SingleLiveEvent<Unit>()
-    val linkItems = MutableLiveData<List<LinkItem>>()
+    val linkItems = MediatorLiveData<List<LinkItem>>()
     val areLinkItemsEmpty = linkItems
         .map { it.isEmpty() }
 
     init {
         viewModelScope.launch {
-            debouncedSearchQuery
-                .collectLatest { searchLinkItems(it ?: "") }
+            debouncedSearchQuery.collectLatest {
+                searchLinkItems(it ?: "")
+            }
+        }
+
+        linkItems.addSource(searchQuery) {
+            if (it.isNullOrBlank()) {
+                linkItems.value = emptyList()
+            }
         }
     }
 
@@ -60,6 +67,11 @@ class SearchViewModel @Inject constructor(
         } finally {
             isLoading.value = false
         }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        linkItems.removeSource(searchQuery)
     }
 
     companion object {
