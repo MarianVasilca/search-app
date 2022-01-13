@@ -23,6 +23,7 @@ buildscript {
         def junit_version = '4.12'
         def androidx_junit_version = '1.1.2'
         def mockito_version = '2.23.0'
+        def mockito_kotlin_version = '4.0.0'
         def nav_version = "2.3.5"
         def retrofit_version = "2.9.0"
         def logging_interceptor_version = "4.9.3"
@@ -59,6 +60,7 @@ buildscript {
         testLibraries = [
                 "junit:junit:$junit_version",
                 "org.mockito:mockito-core:$mockito_version",
+                "org.mockito.kotlin:mockito-kotlin:$mockito_kotlin_version",
                 "com.google.truth:truth:$truth_version",
                 // Coroutines testing
                 "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_android_version",

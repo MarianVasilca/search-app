@@ -2,7 +2,7 @@ package com.argyle.searchapp.di
 
 import android.util.Base64
 import com.argyle.searchapp.BuildConfig
-import com.argyle.searchapp.data.NetworkAPI
+import com.argyle.searchapp.data.network.NetworkAPI
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
