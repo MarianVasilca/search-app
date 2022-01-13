@@ -1,4 +1,4 @@
-package com.argyle.searchapp.ui.main
+package com.argyle.searchapp.ui.search
 
 import android.os.Bundle
 import android.view.LayoutInflater

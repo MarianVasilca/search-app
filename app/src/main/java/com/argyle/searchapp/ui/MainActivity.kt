@@ -1,7 +1,8 @@
-package com.argyle.searchapp
+package com.argyle.searchapp.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.argyle.searchapp.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

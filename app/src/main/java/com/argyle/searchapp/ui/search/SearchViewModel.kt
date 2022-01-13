@@ -1,4 +1,4 @@
-package com.argyle.searchapp.ui.main
+package com.argyle.searchapp.ui.search
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

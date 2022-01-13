@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/search"
-        android:name="com.argyle.searchapp.ui.main.SearchFragment"
+        android:name="com.argyle.searchapp.ui.search.SearchFragment"
         android:label="@string/search_title" />
 
 </navigation>
